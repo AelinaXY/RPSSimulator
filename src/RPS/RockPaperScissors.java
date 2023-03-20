@@ -1,16 +1,15 @@
-package RPS;
 
 import java.util.Random;
 
 public class RockPaperScissors {
 
 	private Random rand = new Random();
+	private validRPSMoves enemyChoice;
 
 	public String rpsFight(validRPSMoves userChoice) {
-		validRPSMoves n;
-		return   ((n = validRPSMoves.values()[this.rand.nextInt(3)])  != userChoice)
-			? ((userChoice == validRPSMoves.PAPER && n == validRPSMoves.ROCK)
-			|| (userChoice == validRPSMoves.ROCK && n == validRPSMoves.SCISSORS)
-			|| (userChoice == validRPSMoves.SCISSORS && n == validRPSMoves.PAPER)
-			? "WIN": "LOSS"): "DRAW";}
+		return   ((enemyChoice = validRPSMoves.values()[this.rand.nextInt(3)])  != userChoice)
+			? ((userChoice == validRPSMoves.PAPER && enemyChoice == validRPSMoves.ROCK)
+			|| (userChoice == validRPSMoves.ROCK && enemyChoice == validRPSMoves.SCISSORS)
+			|| (userChoice == validRPSMoves.SCISSORS && enemyChoice == validRPSMoves.PAPER)
+			? "WIN": "LOSS") : "DRAW";}
 }
