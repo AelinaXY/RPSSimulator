@@ -1,4 +1,4 @@
-
+package RPS;
 import java.util.Random;
 
 public class RockPaperScissors {
